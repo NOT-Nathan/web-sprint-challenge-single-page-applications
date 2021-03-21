@@ -4,18 +4,19 @@ import Home from './components/Homepage'
 import Form from './components/PizzaForm'
 import axios from 'axios'
 import * as yup from 'yup';
+import { pizzaSchema } from './components/validation/Schema'
 
 const initialFormValues = {
   name: '',
   sizes: '',
-  pepperoni: false,
+  toppings: false,
   special: '',
 }
 
 const initialFormErrors = {
   name: '',
   sizes: '',
-  pepperoni: '',
+  toppings: '',
   special: '',
 }
 
@@ -42,12 +43,22 @@ const formSubmit = e => {
 }
 
 const inputChange = (name, value) => {
+  yup.reach(pizzaSchema, name)
+  .validate(value)
+  .then(() => setFormErrors({...formErrors, [name]: ''}))
+  .catch(({errors}) => setFormErrors({...errors, [name]: formErrors[0]}))
+
+
   setFormValues({
   ...formValues,
   [name]: value
 })
 }
 
+useEffect(() => {
+  pizzaSchema.isValid(formValues)
+  .then(valid => setDisabled(!valid))
+}, [formValues])
 
   return (
 

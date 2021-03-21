@@ -38,8 +38,6 @@ function Form(props) {
                 <form onSubmit={onSubmit}>
                     <div>{errors.name}</div>
                     <div>{errors.sizes}</div>
-                    <div>{errors.toppings}</div>
-                    <div>{errors.special}</div>
                     <label>Full name
                         <input 
                             value={values.name}
@@ -53,6 +51,7 @@ function Form(props) {
                         value={values.sizes} 
                         onChange={onChange}
                         name="sizes">
+                            <option>Please Choose A Size</option>
                             <option>10-inch</option>
                             <option>12-inch</option>
                             <option>14-inch</option>

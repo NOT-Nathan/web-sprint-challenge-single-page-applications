@@ -8,7 +8,8 @@ export const pizzaSchema = yup.object().shape({
     sizes: yup
     .string()
     .required('Please choose a size of pizza.'),
-    topings: yup
-    .boolean()
-    .oneOf([true], "Please choose at least one topping.")
+    toppings: yup
+    .boolean(),
+    special: yup
+    .string()
 })
