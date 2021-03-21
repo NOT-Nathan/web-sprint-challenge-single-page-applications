@@ -10,11 +10,11 @@ function Home() {
         <header>
         <h1>Home</h1>
         </header>
-        <body>
+        <div>
             <Link to="/pizza">
                 <button>Pizza Time!</button>
             </Link>
-        </body>
+        </div>
         
         </div>
 

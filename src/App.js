@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom"
+import { BrowserRouter as Router, Route } from "react-router-dom"
 import Home from './components/Homepage'
 import Form from './components/PizzaForm'
 import axios from 'axios'
@@ -20,22 +20,23 @@ const initialFormErrors = {
   special: '',
 }
 
-const initialPizzas = []
 const initialDisabled = true
 
 const App = () => {
 
-const [ formValues, setFormValues ] = useState(initialFormValues)
-const [ formErrors, setFormErrors ] = useState(initialFormErrors)
-const [ pizza, setPizza ] = useState(initialPizzas)
-const [ disabled, setDisabled ] = useState(initialDisabled)
-const [ post, setPost ] = useState([])
+const [ formValues, setFormValues ] = useState(initialFormValues);
+const [ formErrors, setFormErrors ] = useState(initialFormErrors);
+const [ disabled, setDisabled ] = useState(initialDisabled);
+const [ post, setPost ] = useState();
 
 const formSubmit = e => {
+  console.log('Submitted')
   axios
-  .post("https://reqres.in/api/pizzas")
+  .post("https://reqres.in/api/users", formValues)
   .then((res) => {
-    console.log(res.data)
+    setPost(res.data)
+    console.log("Firing", res.data)
+    setFormValues(initialFormValues)
   })
   .catch((err) => {
     console.log(err)
@@ -59,12 +60,11 @@ useEffect(() => {
   pizzaSchema.isValid(formValues)
   .then(valid => setDisabled(!valid))
 }, [formValues])
-
   return (
-
+<div>
     <Router>
     <Route exact path='/pizza'>
-      <Form 
+      <Form
       disabled={disabled}
       submit={formSubmit} 
       change={inputChange}
@@ -76,7 +76,7 @@ useEffect(() => {
       <Home />
     </Route>
     </Router>
-
+    </div>
   );
 };
 export default App;

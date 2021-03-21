@@ -33,7 +33,7 @@ function Form(props) {
                     </Link>
                 </nav>
             </header>
-            <body>
+            <div>
                 <img src={pizzaImage} alt="Some Pizza"/>
                 <form onSubmit={onSubmit}>
                     <div>{errors.name}</div>
@@ -68,6 +68,54 @@ function Form(props) {
                                 onChange={onChange}
                             />
                         </label>
+                        <label>Ham
+                            <input
+                                value={values.toppings} 
+                                type='checkbox'
+                                name='toppings'
+                                onChange={onChange}
+                            />
+                        </label>
+                        <label>Sausage
+                            <input
+                                value={values.toppings} 
+                                type='checkbox'
+                                name='toppings'
+                                onChange={onChange}
+                            />
+                        </label>
+                        <label>Bacon
+                            <input
+                                value={values.toppings} 
+                                type='checkbox'
+                                name='toppings'
+                                onChange={onChange}
+                            />
+                        </label>
+                        <label>Pineapple
+                            <input
+                                value={values.toppings} 
+                                type='checkbox'
+                                name='toppings'
+                                onChange={onChange}
+                            />
+                        </label>
+                        <label>Spinach
+                            <input
+                                value={values.toppings} 
+                                type='checkbox'
+                                name='toppings'
+                                onChange={onChange}
+                            />
+                        </label>
+                        <label>Chicken
+                            <input
+                                value={values.toppings} 
+                                type='checkbox'
+                                name='toppings'
+                                onChange={onChange}
+                            />
+                        </label>
                     </div>
                     <label>Special Instructions
                         <input 
@@ -77,9 +125,9 @@ function Form(props) {
                             name="special"
                         />
                     </label>
-                    <button disabled={disabled}>Submit</button>
+                    <button disabled={disabled}>Order</button>
                 </form>
-            </body>
+            </div>
         </div>
     )
 }
