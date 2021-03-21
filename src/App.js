@@ -33,7 +33,7 @@ const [ post, setPost ] = useState([])
 
 const formSubmit = e => {
   axios
-  .post("https://reqres.in/")
+  .post("https://reqres.in/api/pizzas")
   .then((res) => {
     console.log(res.data)
   })
