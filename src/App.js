@@ -9,14 +9,26 @@ import { pizzaSchema } from './components/validation/Schema'
 const initialFormValues = {
   name: '',
   sizes: '',
-  toppings: false,
+  pepperoni: false,
+  ham: false,
+  sausage: false,
+  bacon: false,
+  pineapple: false,
+  spinach: false,
+  chicken: false,
   special: '',
 }
 
 const initialFormErrors = {
   name: '',
   sizes: '',
-  toppings: '',
+  pepperoni: false,
+  ham: false,
+  sausage: false,
+  bacon: false,
+  pineapple: false,
+  spinach: false,
+  chicken: false,
   special: '',
 }
 
@@ -32,7 +44,7 @@ const [ post, setPost ] = useState();
 const formSubmit = e => {
   console.log('Submitted')
   axios
-  .post("https://reqres.in/api/users", formValues)
+  .post("https://reqres.in/api/pizzas", formValues)
   .then((res) => {
     setPost(res.data)
     console.log("Firing", res.data)
@@ -49,7 +61,6 @@ const inputChange = (name, value) => {
   .then(() => setFormErrors({...formErrors, [name]: ''}))
   .catch(({errors}) => setFormErrors({...errors, [name]: formErrors[0]}))
 
-
   setFormValues({
   ...formValues,
   [name]: value
@@ -65,11 +76,11 @@ useEffect(() => {
     <Router>
     <Route exact path='/pizza'>
       <Form
-      disabled={disabled}
-      submit={formSubmit} 
-      change={inputChange}
-      values={formValues}
-      errors={formErrors}
+        disabled={disabled}
+        submit={formSubmit} 
+        change={inputChange}
+        values={formValues}
+        errors={formErrors}
       />
     </Route>,
     <Route exact path='/'>

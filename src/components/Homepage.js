@@ -6,16 +6,14 @@ function Home() {
 
     return(
         <div>
-
         <header>
-        <h1>Home</h1>
+            <h1>Home</h1>
         </header>
         <div>
             <Link to="/pizza">
-                <button>Pizza Time!</button>
+                <button>Pizza?</button>
             </Link>
-        </div>
-        
+        </div> 
         </div>
 
     )

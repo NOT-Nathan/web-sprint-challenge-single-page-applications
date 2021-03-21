@@ -8,7 +8,19 @@ export const pizzaSchema = yup.object().shape({
     sizes: yup
     .string()
     .required('Please choose a size of pizza.'),
-    toppings: yup
+    pepperoni:  yup
+    .boolean(),
+    ham: yup
+    .boolean(),
+    sausage:  yup
+    .boolean(),
+    bacon:  yup
+    .boolean(),
+    pineapple:  yup
+    .boolean(),
+    spinach:  yup
+    .boolean(),
+    chicken:  yup
     .boolean(),
     special: yup
     .string()

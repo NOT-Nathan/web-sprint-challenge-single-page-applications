@@ -60,62 +60,62 @@ function Form(props) {
                     </label>
                     <div>
                         <h3>Pizza Toppings</h3>
-                        <label>Pepperoni
+                        <label>
                             <input
-                                value={values.toppings} 
+                                value={values.pepperoni} 
                                 type='checkbox'
-                                name='toppings'
+                                name='pepperoni'
                                 onChange={onChange}
                             />
-                        </label>
-                        <label>Ham
+                        Pepperoni</label>
+                        <label>
                             <input
-                                value={values.toppings} 
+                                value={values.ham} 
                                 type='checkbox'
-                                name='toppings'
+                                name='ham'
                                 onChange={onChange}
                             />
-                        </label>
-                        <label>Sausage
+                        Ham</label>
+                        <label>
                             <input
-                                value={values.toppings} 
+                                value={values.sausage} 
                                 type='checkbox'
-                                name='toppings'
+                                name='sausage'
                                 onChange={onChange}
                             />
-                        </label>
-                        <label>Bacon
+                        Sausage</label>
+                        <label>
                             <input
-                                value={values.toppings} 
+                                value={values.bacon} 
                                 type='checkbox'
-                                name='toppings'
+                                name='bacon'
                                 onChange={onChange}
                             />
-                        </label>
-                        <label>Pineapple
+                        Bacon</label>
+                        <label>
                             <input
-                                value={values.toppings} 
+                                value={values.pineapple} 
                                 type='checkbox'
-                                name='toppings'
+                                name='pineapple'
                                 onChange={onChange}
                             />
-                        </label>
-                        <label>Spinach
+                        Pineapple</label>
+                        <label>
                             <input
-                                value={values.toppings} 
+                                value={values.spinach} 
                                 type='checkbox'
-                                name='toppings'
+                                name='spinach'
                                 onChange={onChange}
                             />
-                        </label>
-                        <label>Chicken
+                        Spinach</label>
+                        <label>
                             <input
-                                value={values.toppings} 
+                                value={values.chicken} 
                                 type='checkbox'
-                                name='toppings'
+                                name='chicken'
                                 onChange={onChange}
                             />
-                        </label>
+                        Chicken</label>
                     </div>
                     <label>Special Instructions
                         <input 
